@@ -25,4 +25,22 @@ function getRandomPhraseArray(arr) {
   return phraseChars;
 }
 
-console.log(getRandomPhraseArray(phrases));
+const phraseArray = (getRandomPhraseArray(phrases));
+console.log(phraseArray)
+
+// Function to set the game display
+function addPhraseToDisplay(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const char = document.createTextNode(arr[i]);
+    const charLI = document.createElement('li');
+    charLI.appendChild(char);
+    if (charLI.textContent != ' ') {
+      charLI.classList = 'letter';
+    } else {
+      charLI.classList = 'space';
+    }
+    document.querySelector('#phrase ul').appendChild(charLI);
+  }
+}
+
+addPhraseToDisplay(phraseArray);
