@@ -131,9 +131,9 @@ window.onkeyup = (e) => {
 function checkWin() {
   const shownLetters = document.querySelectorAll('.show');
   const totalLetters = document.querySelectorAll('.letter');
+  const overlay = document.getElementById('overlay');
   // What happens if the player loses all their lives
   if (missed >= 5) {
-    const overlay = document.getElementById('overlay');
     overlay.style.display = '';
     overlay.classList.remove('start');
     overlay.classList.add('lose')
